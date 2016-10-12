@@ -1,41 +1,72 @@
 //Variables definition
-$def-color: #DF0101;
-$def-color-hover: #DF3A01;
-$navbar-default-bg: $def-color;
+$def-color-main: #DF0101;
+$def-color-alt: #E6E6E6;
+$navbar-default-bg: $def-color-main;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+//General
 body { 
     padding-top: 70px; 
-    background-color:black;
+    background-color: black;
 }
 
+.btn-xlarge, .btn-lg {
+    font-size: 1.7em;
+    color: $def-color-alt;
+    background-color: $def-color-main;
+    border: 1px solid $def-color-main;
+}
+
+.btn-xlarge:hover, .btn-lg:hover {
+    background-color: $def-color-alt;
+    color: $def-color-main;
+    border: 1px solid $def-color-main;
+}
+
+h1, label {
+    color: $def-color-alt;
+}
+
+//Navigation bar
 #logo {
     float: left;
     font-size: 1.7em;
-    color: #fff;
-    text-transform: uppercase;
+    color: $def-color-alt;
+    text-transform: capitalize;
     letter-spacing: -1px;
     font-weight: bold;
+    margin-left: 45px;
 }
 
 #logo:hover {
-    color: #fff;
+    color: $def-color-alt;
     text-decoration: none;
 }
 
-.navbar-nav a {
+#moto {
     float: left;
-    color: #fff;
-    letter-spacing: -1px;
-    font-weight: bold;
+    font-size: 0.8em;
+    color: $def-color-alt;
+    font-weight: italic;
 }
 
-.center {
-    text-align: center;
+.navbar-nav li a {
+  color: $def-color-alt !important;
+  background-color: $def-color-main !important;
 }
 
+.navbar-nav li a:hover {
+  color: $def-color-main !important;
+  background-color: $def-color-alt !important;
+}
+
+.dropdown-menu {
+    background-color: $def-color-main !important;
+}
+
+//Body
 .jumbotron {
     background-image: asset-url('jewelry-625724_960_720.jpg');
     background-size: cover;
@@ -44,35 +75,19 @@ body {
 }
 
 .jumbotron h1 {
-    color: #fff;
+    color: $def-color-alt;
     text-align: center;
     margin-bottom: 30px;
     letter-spacing: -1px;
     font-weight: bold;
 }
 
-.btn-xlarge {
-    font-size: 1.7em;
-    background-color: $def-color;
-}
-
-.btn-xlarge:hover {
-    background-color: $def-color-hover;
-}
-
+//Footer
 footer {
     margin-top: 45px;
     padding-top: 5px;
-    border-top: 1px solid $def-color;
-    color: #777;
-}
-
-footer a {
-    color: $def-color;
-}
-
-footer a:hover {
-    color: $def-color-hover;
+    border-top: 1px solid $def-color-main;
+    color: $def-color-alt;
 }
 
 footer small {
