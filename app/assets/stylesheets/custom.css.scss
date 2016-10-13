@@ -1,7 +1,13 @@
 //Variables definition
 $def-color-main: #DF0101;
 $def-color-alt: #E6E6E6;
+
+//Bootstrap variables redefinition
 $navbar-default-bg: $def-color-main;
+$text-color: $def-color-alt;
+$btn-default-color: $def-color-alt; 
+$btn-default-bg: $def-color-main; 
+$btn-default-border: $def-color-main;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -12,21 +18,14 @@ body {
     background-color: black;
 }
 
-.btn-xlarge, .btn-lg {
+.btn-xlarge {
     font-size: 1.7em;
-    color: $def-color-alt;
-    background-color: $def-color-main;
-    border: 1px solid $def-color-main;
 }
 
 .btn-xlarge:hover, .btn-lg:hover {
     background-color: $def-color-alt;
     color: $def-color-main;
     border: 1px solid $def-color-main;
-}
-
-h1, label {
-    color: $def-color-alt;
 }
 
 //Navigation bar
