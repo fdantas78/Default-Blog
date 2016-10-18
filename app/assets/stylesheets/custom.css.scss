@@ -28,6 +28,20 @@ body {
     border: 1px solid $def-color-main;
 }
 
+.text-black {
+    color: black;
+    border-color: black;
+}
+
+.no-margin-top {
+    margin-top: 0;
+}
+
+.no-margin-bottom {
+    margin-bottom: 0;
+}
+
+
 //Navigation bar
 #logo {
     float: left;
