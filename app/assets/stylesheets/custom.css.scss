@@ -37,11 +37,6 @@ body {
     margin-top: 0;
 }
 
-.no-margin-bottom {
-    margin-bottom: 0;
-}
-
-
 //Navigation bar
 #logo {
     float: left;
@@ -93,6 +88,19 @@ body {
     margin-bottom: 30px;
     letter-spacing: -1px;
     font-weight: bold;
+}
+
+.article-title {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.article-body {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 //Footer
