@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   #   get 'products/:id' => 'catalog#view'
   
   get 'about', to: 'pages#about'
-
+  get 'signup', to: 'users#new'
+  
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
   #   resources :products
   
   resources :articles
+  resources :users, except: [:new]
 
   # Example resource route with options:
   #   resources :products do

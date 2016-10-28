@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+    
     has_many :articles
     
     before_save { self.email = email.downcase }
@@ -12,5 +13,4 @@ class User < ActiveRecord::Base
         format: { with: VALID_EMAIL_REGEX }
         
     has_secure_password
-    
 end
