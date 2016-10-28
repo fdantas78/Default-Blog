@@ -26,13 +26,13 @@
                     <%= f.label :password %>
                 </div>
                 <div class="col-sm-8">    
-                    <%= f.password_field :password, class: "form-control", placeholder: "Enter password" %>
+                    <%= f.password_field :password, class: "form-control", placeholder: @user.new_record? ? "Enter password" : "Enter new password if you want to change it" %>
                 </div>
             </div>
             
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <%= f.submit "Sign up", class: "btn btn-default btn-lg" %>
+                    <%= f.submit(@user.new_record? ? "Sign up" : "Update", class: "btn btn-default btn-lg") %>
                     <%= link_to "Cancel", articles_path, class: "btn btn-default btn-lg", role: "button" %>
                 </div>
             </div>

@@ -9,9 +9,6 @@ class ArticlesController < ApplicationController
        @article = Article.new
     end
     
-    def edit
-    end
-    
     def create
         
         #debugger
@@ -25,6 +22,9 @@ class ArticlesController < ApplicationController
         else
             render 'new'
         end
+    end
+    
+    def edit
     end
     
     def update
