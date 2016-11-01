@@ -1,0 +1,15 @@
+<div class="text-center">
+    <% obj.each do |u| %>
+        <ul class="listing">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="well well-lg text-black">
+                        <li><%= link_to gravatar_for(u), user_path(u) %></li>
+                        <li class="user-title"><%= link_to u.username, user_path(u) %></li>
+                        <li><small class"text-black"><%= pluralize(u.articles.count, "article") if u.articles.any? %></small></li>
+                    </div>
+                </div>
+            </div>
+        </ul>
+    <% end %>
+</div>
