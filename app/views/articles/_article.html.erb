@@ -10,7 +10,11 @@
                 </div>
                 <div class="article-meta-details text-black">
                     <small>
-                        Created by: <%= link_to a.user.username, user_path(a.user) %>, 
+                        <% if a.user %>
+                            Created by: <%= link_to a.user.username, user_path(a.user) %>, 
+                        <% else %>
+                            Created:
+                        <% end %>
                         <%= time_ago_in_words(a.created_at) %> ago, 
                         last updated: <%= time_ago_in_words(a.updated_at) %>
                     </small>
