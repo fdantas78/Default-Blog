@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
     
     
     def index
-        @articles = Article.paginate(page: params[:page], per_page: 5)
+        @articles = Article.paginate(page: params[:page], per_page: 5).order('created_at DESC')
     end
     
     def new
@@ -31,8 +31,6 @@ class ArticlesController < ApplicationController
     end
     
     def update
-        
-        @article.user = current_user
         
         if @article.update(article_params)
             flash[:success] = "Article was successfully updated"
@@ -61,7 +59,7 @@ class ArticlesController < ApplicationController
     end
     
     def require_same_user
-        if current_user != @article.user
+        if current_user != @article.user && !current_user.admin?
           flash[:danger] = "You must be the author of this article to perform this action!"
           redirect_to article_path(@article)
         end
