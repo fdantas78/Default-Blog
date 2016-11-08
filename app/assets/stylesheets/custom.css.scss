@@ -61,17 +61,23 @@ body {
 }
 
 .navbar-nav li a {
-  color: $def-color-alt !important;
-  background-color: $def-color-main !important;
+    color: $def-color-alt !important;
+    background-color: $def-color-main !important;
+    margin-top: 0;
 }
 
 .navbar-nav li a:hover {
-  color: $def-color-main !important;
-  background-color: $def-color-alt !important;
+    color: $def-color-main !important;
+    background-color: $def-color-alt !important;
 }
 
 .dropdown-menu {
     background-color: $def-color-main !important;
+}
+
+.navbar-nav li a.profile-image {
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 //Body
