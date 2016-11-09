@@ -1,0 +1,10 @@
+<h2 class="text-center">
+    Name: <%= @category.name %>
+</h2>
+<div class="well col-xs-8 col-xs-offset-2"> 
+    <% if logged_in? && current_user.admin? %>
+        <%= link_to "Edit", edit_category_path(@category), class: "btn btn-xs btn-default" %>
+    <% end %>
+    <%= link_to "View all categories", categories_path, class: "btn btn-xs btn-default" %>
+    
+</div>
