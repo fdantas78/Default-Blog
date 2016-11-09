@@ -20,7 +20,22 @@ class CategoriesController < ApplicationController
         end
     end
     
+    def update
+        if @category.update(category_params)
+            flash[:success] = "Category was successfully updated"
+            redirect_to categories_path
+        else
+            render 'edit'
+        end
+    end
+    
     def show
+    end
+    
+    def destroy
+        @category.destroy
+        flash[:danger] = "Category and all relationships with articles have been deleted"
+        redirect_to categories_path
     end
     
     private

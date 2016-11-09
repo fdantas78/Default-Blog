@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   
   resources :articles
   resources :users, except: [:new]
-  resources :categories, except: [:destroy]
+  resources :categories
 
   # Example resource route with options:
   #   resources :products do
