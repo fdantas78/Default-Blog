@@ -28,7 +28,7 @@ class UsersController < ApplicationController
     def update
         if @user.update(user_params)
             flash[:success] = "Account was successfully updated"
-            redirect_to articles_path
+            redirect_to user_path(@user)
         else
             render 'edit'
         end
@@ -43,7 +43,7 @@ class UsersController < ApplicationController
         flash[:danger] = "User and all articles created by user have been deleted"
         redirect_to users_path
     end
-    
+
     private
     
     def set_user

@@ -1,6 +1,6 @@
 class Article < ActiveRecord::Base
    belongs_to :user
-   has_many :article_categories
+   has_many :article_categories, dependent: :destroy
    has_many :categories, through: :article_categories
    
    default_scope { order(created_at: :desc) }
