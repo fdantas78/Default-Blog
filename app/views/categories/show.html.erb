@@ -1,13 +1,16 @@
-<h2 class="text-center">
-    Name: <%= @category.name %>
-</h2>
-<div class="well col-xs-8 col-xs-offset-2"> 
-    <% if logged_in? && current_user.admin? %>
+<h1 class="text-center"><%= @category.name %></h1>
+<% if logged_in? && current_user.admin? %>
+    <div class="well col-xs-8 col-xs-offset-2"> 
         <%= link_to "Edit", edit_category_path(@category), class: "btn btn-xs btn-default" %>
         <%= link_to "Delete", category_path(@category), method: :delete,
                             data: { confirm: "Are you sure you want to delete the category and all relationships with their articles?"}, 
                             class: "btn btn-xs btn-default" %>
-    <% end %>
-    <%= link_to "View all categories", categories_path, class: "btn btn-xs btn-default" %>
-    
+    </div>
+<% end %>
+<div class="text-center">
+    <%= will_paginate @category_articles %>
+</div>
+<%= render 'articles/article', obj: @category_articles %>
+<div class="text-center">
+    <%= will_paginate @category_articles %>
 </div>

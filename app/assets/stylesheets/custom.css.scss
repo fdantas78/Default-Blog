@@ -37,6 +37,10 @@ body {
     margin-top: 0;
 }
 
+.no-margin-bottom {
+    margin-bottom: 0;
+}
+
 //Navigation bar
 #logo {
     float: left;
@@ -106,13 +110,17 @@ body {
     border-bottom: 1px solid black;
     padding-top: 15px;
     padding-bottom: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 0px;
 }
 
 .article-meta-details {
     font-size: 0.8em;
     font-weight: italic bold;
     float: right;
+}
+
+.article-categories {
+    margin-bottom: 15px;
 }
 
 .user-title{
@@ -128,6 +136,16 @@ body {
 .listing {
     list-style: none;
     padding-left: 0;
+}
+
+.badge {
+    background-color: $def-color-alt;
+    font-weight: bold;
+    font-size: 0.6em;
+}
+
+.input_checkbox input {
+    width: auto !important;
 }
 //Footer
 footer {

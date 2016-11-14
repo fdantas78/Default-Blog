@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
     has_many :articles, dependent: :destroy
     
     before_save { self.email.downcase! }
+    default_scope { order(username: :asc) }
     
     validates :username, presence: true, 
         uniqueness: { case_sensitive: false },

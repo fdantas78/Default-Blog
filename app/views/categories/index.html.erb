@@ -1,8 +1,17 @@
 <h1 class="text-center">Listing all categories</h1>
 <div class="text-center">
     <%= will_paginate %>
-</div>
-<%= render 'category', obj: @categories %>
-<div class="text-center">
+    <% @categories.each do |c| %>
+        <ul class="listing">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="well well-lg text-black">
+                        <li class="category-title"><%= link_to c.name, category_path(c) %></li>
+                        <li><small><%= pluralize(c.articles.count, "article") %></small></li>
+                    </div>
+                </div>
+            </div>
+        </ul>
+    <% end %>
     <%= will_paginate %>
 </div>

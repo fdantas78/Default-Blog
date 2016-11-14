@@ -8,6 +8,11 @@
                 <div class="article-body text-black">
                     <%= truncate(a.description, length: 100) %>
                 </div>
+                <div class="article-categories">
+                <% if a.categories.any? %>
+                    <p><%= render a.categories %></p>
+                <% end  %>
+                </div>
                 <div class="article-meta-details text-black">
                     <small>
                         Created by: <%= link_to a.user.username, user_path(a.user) %>, 
